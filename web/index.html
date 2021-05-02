@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <style>/*  Stylesheet    */  
+   
+    .menu { /* menu */
+        align:center;
+      width:100%;
+      text-align:center;
+    }
+    .menu a { /* Menu links */
+             text-align:center;
+      background-color:#26aceb;
+            
+      margin-top:10px;
+      margin-bottom:10px;
+      padding-bottom:24px;
+      padding-left:6px;
+      padding-right:6px;
+      padding-top:24px;
+      display:inline-block;
+      width:50%;
+      color:white;
+      text-decoration:none;
+    } 
+    
+        .menu a:hover { /* Menu on mouseover */
+             text-align:center;
+      background-color:#9999ff;
+            
+      margin-top:10px;
+      margin-bottom:10px;
+      padding-bottom:24px;
+      padding-left:6px;
+      padding-right:6px;
+      padding-top:24px;
+      display:inline-block;
+      width:50%;
+      color:white;
+      text-decoration:none;
+    } 
+    
+    p, h3{
+        display:inline-block;
+        width:50%;
+        color:grey;
+    }
+    
+    footer{
+        font-size:8;
+        font-style:italic;
+    }
+    </style>
+    
+    <head>
+        <title>USA COVID-19 Statistic Tracker</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body align="center" style=font-family:Verdana>
+        <div align='center'><h1>USA COVID-19 Statistic Tracker</h1></div> <!-- Title -->
+    
+
+    <div class="menu"> <!-- Link menu -->
+        <a href="caseSelect.html">See 'Cases and Deaths' Data</a><br> <!-- Links -->
+        <a href="vaccineSelect.html">See 'Vaccination' Data</a><br>
+        <a href="trendSelect.html">See Trends</a><br><br>
+        
+        <h3> <i>What is this?</i> </h3>
+        <p text-align="center"> The USA COVID-19 Statistic tracker can be used to see various datasets as tables sorted by state. This would allow
+            you to see which states are the safest, and which you should avoid. The datasets also go into vaccine information, to visualize
+            which states are getting the most vaccinations.</p>
+            
+            <br><br>    
+        <h3> <i>How do I use this?</i> </h3>
+        <p text-align="center"> Currently, our Database is not hosted on the cloud, so it must be manually downloaded. Once it's downloaded,
+            select a dataset on the homepage, and select a subset to view the table.<br><a href="dbServlet"> Click here to download the dataset locally </a></p>
+    </div>
+        
+        <br><br><br><br><br>
+    </body>
+    <footer><hr><p>IST 411
+        <br>Kameron Dangleben, River M. Barton
+        <br>Last Updated: May 1, 2021</p>
+    </footer>
+</html>

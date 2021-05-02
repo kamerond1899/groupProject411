@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <style> .menu { /* menu */
+        align:center;
+      width:100%;
+      text-align:center;
+    }
+    .menu a { /* Menu links */
+             text-align:center;
+      background-color:#26aceb;
+            
+      margin-top:10px;
+      margin-bottom:10px;
+      padding-bottom:24px;
+      padding-left:6px;
+      padding-right:6px;
+      padding-top:24px;
+      display:inline-block;
+      width:50%;
+      color:white;
+      text-decoration:none;
+    } 
+    
+        .menu a:hover { /* Menu on mouseover */
+             text-align:center;
+      background-color:#9999ff;
+            
+      margin-top:10px;
+      margin-bottom:10px;
+      padding-bottom:24px;
+      padding-left:6px;
+      padding-right:6px;
+      padding-top:24px;
+      display:inline-block;
+      width:50%;
+      color:white;
+      text-decoration:none;
+    } </style>
+    <head>
+        <title >USA COVID-19 Statistic Tracker</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Screen will resize based on device width-->
+    </head>
+    <body align="center" style=font-family:Verdana>
+        <h3>Trend Datasets by State</h3><!-- Title -->
+    <form  align="center" action="tableServlet" method="get">
+         <input type="hidden" name="action" value="confirm">   
+            <SELECT NAME="name">
+            <OPTION>Monthly Trends
+            </SELECT>
+            <SELECT NAME="state"><!--   State Drop down menu  -->
+                <OPTION>Alabama
+                <OPTION>Alaska
+                <OPTION>Arizona
+                <OPTION>Arkansas
+                <OPTION>California
+                <OPTION>Colorado
+                <OPTION>Connecticut
+                <OPTION>Delaware
+                <OPTION>Florida
+                <OPTION>Georgia
+                <OPTION>Hawaii
+                <OPTION>Idaho
+                <OPTION>Illinois
+                <OPTION>Indiana
+                <OPTION>Iowa
+                <OPTION>Kansas
+                <OPTION>Kentucky
+                <OPTION>Louisiana
+                <OPTION>Maine
+                <OPTION>Maryland
+                <OPTION>Massachusetts
+                <OPTION>Michigan
+                <OPTION>Minnesota
+                <OPTION>Mississippi
+                <OPTION>Missouri
+                <OPTION>Montana
+                <OPTION>Nebraska
+                <OPTION>Nevada
+                <OPTION>New Hampshire
+                <OPTION>New Jersey
+                <OPTION>New Mexico
+                <OPTION>New York
+                <OPTION>North Carolina
+                <OPTION>North Dakota
+                <OPTION>Ohio
+                <OPTION>Oklahoma
+                <OPTION>Oregon
+                <OPTION>Pennsylvania
+                <OPTION>Rhode Island
+                <OPTION>South Carolina
+                <OPTION>South Dakota
+                <OPTION>Tennessee
+                <OPTION>Texas
+                <OPTION>Utah
+                <OPTION>Vermont
+                <OPTION>Virginia
+                <OPTION>Washington
+                <OPTION>West Virginia
+                <OPTION>Wisconsin
+                <OPTION>Wyoming
+            </SELECT>
+         <SELECT NAME="month"><!-- Month Selector -->
+            <OPTION>January-February, 2021
+            <OPTION>February-March, 2021
+            <OPTION>March-April, 2021
+            </SELECT>
+         <br><br>
+            <input type="submit" name="submit" value="Get Table"></form>
+        <br><br><hr>
+             <div class="menu"><!-- Return Menu -->
+            <a href="index.html">Return Home</a>
+            </div>
+</body>
+</html>
