@@ -208,26 +208,30 @@ public class Dataset implements Serializable{
         this.constructorFlag = constructorFlag;
     }
     
+    /**
+     * 
+     * @param number the number being formatted
+     * @return "+" or "" + number
+     */
+    private static String showSign(int number) {
+    return (number > 0 ? "+" : "" ) + number;
+}
+    
     @Override
     public String toString(){
-       if(constructorFlag == 2)
-       {
-        return "<tr>" + "<td>" + getDate() + "</td>" + "<td>" + getState() + "</td>" + "<td>" + getCases() + "</td>" + "<td>" + getDeaths() + "</td>"+ "</tr>";
-       }
-       else if(constructorFlag == 3)
-       {
-           return "<tr>" + "<td>" + getDate() + "</td>" + "<td>" + getState() + "</td>" + "<td>" + this.getTotalVac() + "</td>" + "<td>"
-                   + this.getTotalDis() + "</td>"+ "<td>" + this.getPeopleVac() + "</td>" + "<td>" + this.getPeopleFullyVac() + "</td>" + "<td>" + this.getDailyVac() + "</td>"+ "</tr>";
-       }
-       else if(constructorFlag == 4)
-       {
-           return "<tr>" + "<td>" + getState() + "</td>" + "<td>" + getCases() + "</td>" + "<td>" + getDeaths() + "</td>" +"<td>" + this.getTotalVac() + "</td>" + "<td>"
-                   + this.getTotalDis() + "</td>"+ "<td>" + this.getPeopleVac() + "</td>" + "<td>" + this.getPeopleFullyVac() + "</td>" + "<td>" + this.getDailyVac() + "</td>"+ "</tr>";
-       }
-       else
-       {
-           return "Unable to return data.";
-       }
+        switch (constructorFlag) {
+        
+            case 2://If constructor flag is 2, format the row with "Cases and Deaths" data
+                return "<tr>" + "<td>" + getDate() + "</td>" + "<td>" + getState() + "</td>" + "<td>" + getCases() + "</td>" + "<td>" + getDeaths() + "</td>"+ "</tr>";
+            case 3://If constructor flag is 3, format the row with "Vaccines" data
+                return "<tr>" + "<td>" + getDate() + "</td>" + "<td>" + getState() + "</td>" + "<td>" + this.getTotalVac() + "</td>" + "<td>"
+                        + this.getTotalDis() + "</td>"+ "<td>" + this.getPeopleVac() + "</td>" + "<td>" + this.getPeopleFullyVac() + "</td>" + "<td>" + this.getDailyVac() + "</td>"+ "</tr>";
+            case 4://If constructor flag is 4, format the row with "Trends" data. ShowSign is used to show + or - sign for changing values
+                return "<tr>" + "<td>" + getState() + "</td>" + "<td>" + showSign(getCases()) + "</td>" + "<td>" + showSign(getDeaths()) + "</td>" +"<td>" + showSign(this.getTotalVac()) + "</td>" + "<td>"
+                        + showSign(this.getTotalDis()) + "</td>"+ "<td>" + showSign(this.getPeopleVac()) + "</td>" + "<td>" + showSign(this.getPeopleFullyVac()) + "</td>" + "<td>" + showSign(this.getDailyVac()) + "</td>"+ "</tr>";
+            default:
+                return "Unable to return data.";
+        }
 
     }
 }

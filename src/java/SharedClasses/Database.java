@@ -83,17 +83,16 @@ public class Database {
         //Statement stmt = con.createStatement();
         PreparedStatement statement;
         
-        String compiledQuery = "INSERT INTO CasesAndDeaths(ID, Date, State, Cases, Deaths) "
-                   + "VALUES"+"(? ,?, ?, ?, ?)";
+        String compiledQuery = "INSERT INTO CasesAndDeaths(Date, State, Cases, Deaths) "
+                   + "VALUES"+"(?, ?, ?, ?)";
         
                 statement = con.prepareStatement(compiledQuery);
         for(int i = 0; i < s.size(); i++)
         {   
-            statement.setInt(1, i);
-            statement.setString(2, s.get(i).getDate());
-            statement.setString(3, s.get(i).getState());
-            statement.setInt(4,  s.get(i).getCases());
-            statement.setInt(5,  s.get(i).getDeaths());
+            statement.setString(1, s.get(i).getDate());
+            statement.setString(2, s.get(i).getState());
+            statement.setInt(3,  s.get(i).getCases());
+            statement.setInt(4,  s.get(i).getDeaths());
             
             statement.executeUpdate();
         }
