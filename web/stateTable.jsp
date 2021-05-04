@@ -1,7 +1,10 @@
 <%-- 
     Document   : stateTable
     Created on : Apr 28, 2021, 2:26:52 PM
-    Author     : Shadd
+    Author     : Kameron Dangleben, River Martinez
+
+    Purpose: Display the String tableHTML that has been passed from the tableServlet. This object
+    will display data from the table based on what dataset the user decided to view
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>

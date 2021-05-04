@@ -1,11 +1,9 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Runs the CSV parser to update the database
  */
 package SharedClasses;
 
-import GUI.DataFrame;
+
 import SharedClasses.CSVParse;
 import java.net.MalformedURLException;
 import java.sql.SQLException;
@@ -20,9 +18,7 @@ public class App {
      * @param args the command line arguments
      */
     public static void main(String[] args) throws MalformedURLException, SQLException {
-        //CSVParse parseDataIntoDatabase = new CSVParse();
-         DataFrame dataFrame = new DataFrame();
-        //River was here
+        CSVParse parseDataIntoDatabase = new CSVParse();
     }
     
 }

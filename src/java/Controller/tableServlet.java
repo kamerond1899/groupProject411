@@ -1,9 +1,15 @@
 package Controller;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/**
+ * 
+ * IST 411 
+ * tableServlet.java 
+ * Purpose: Servlet class which controls the backend of the stateTable.jsp page. Takes the request attributes from
+ * caseSElect, trendSelect, or vaccineSelect, and then uses it to determine what table will be created. Sends the table object
+ * as a request attribute, which will then be displayed on stateTable.jsp.
+ *  
+ * 
+ * @author Kameron Dangleben , River Martinez 4/20/21
  */
 
 import SharedClasses.Database;
@@ -20,38 +26,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- *
- * @author Shadd
- */
 public class tableServlet extends HttpServlet {
-
-    /**
-     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
-     * methods.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
-    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet tableServlet</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet tableServlet at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
-        }
-    }
-
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
@@ -61,7 +36,7 @@ public class tableServlet extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-        @Override
+      @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
@@ -104,7 +79,7 @@ public class tableServlet extends HttpServlet {
             "                   <th>Deaths</th>" +
             "               </tr>";
             }
-            else if(tableDataset.get(0).getConstructorFlag() == 3)//If constructor flat is 3(Vaccine Data), set headers to:
+            else if(tableDataset.get(0).getConstructorFlag() == 3)//If constructorFlag is 3(Vaccine Data), set headers to:
                 //Date, State, Total Vacc, Total Dist, People Vaccinated, People Fully Vacc, Daily Vaccinated
             {
                 returnLink = "vaccineSelect.html";
@@ -137,7 +112,7 @@ public class tableServlet extends HttpServlet {
             else //If constructor flag is not set, no headers will be grabbed
             {
                 returnLink = "index.html";
-                tableHTML = "Unable to get headers. Please try again. <br><br><br>";
+                tableHTML = "Unable to get headers. Please try again. <br><br><br>";//prompt
             }
             }
             catch(Exception e){ //In case there is no data for a particular month and state, display an in browser error message.
@@ -160,24 +135,7 @@ public class tableServlet extends HttpServlet {
     }      
               getServletContext()
             .getRequestDispatcher(url)
-            .forward(request, response);
-              
-              
-    }
-
-
-    /**
-     * Handles the HTTP <code>POST</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        processRequest(request, response);
+            .forward(request, response);       
     }
 
     /**
@@ -187,7 +145,7 @@ public class tableServlet extends HttpServlet {
      */
     @Override
     public String getServletInfo() {
-        return "Short description";
+        return "Displays the data table from the Dataset object";
     }// </editor-fold>
 
 }
